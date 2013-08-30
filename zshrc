@@ -25,6 +25,8 @@ export GOPATH=/Users/tparker/goworkspace
 alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 
+setopt interactivecomments
+
 # added by travis gem
 if [[ -f /Users/tparker/.travis/travis.sh ]]; then
     source /Users/tparker/.travis/travis.sh
