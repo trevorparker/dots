@@ -23,19 +23,8 @@ alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 # ZSH opts
 setopt interactivecomments
 
-# GPG agent
-if [[ -f "${HOME}/.gpg-agent-info" ]]; then
-    . "${HOME}/.gpg-agent-info" > /dev/null
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-    export SSH_AGENT_PID
-elif command -v gpg-agent >/dev/null; then
-    gpg-agent --quiet --daemon --enable-ssh-support --write-env-file $HOME/.gpg-agent-info 2> /dev/null
-    chmod 600 $HOME/.gpg-agent-info
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-    export SSH_AGENT_PID
-fi
+# GPG and SSH agents
+eval $(keychain --eval --quiet)
 
 GPG_TTY=$(tty)
 export GPG_TTY
