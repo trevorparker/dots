@@ -23,11 +23,9 @@ alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 # ZSH opts
 setopt interactivecomments
 
-# GPG and SSH agents
-eval $(keychain --eval --quiet)
-
-GPG_TTY=$(tty)
-export GPG_TTY
+if [[ -f "${HOME}/.agents" ]]; then
+    source $HOME/.agents
+fi
 
 # Colored man pages
 # https://wiki.archlinux.org/index.php/Man_Page#Using_less_.28Recommended.29
