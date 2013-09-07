@@ -13,8 +13,14 @@ fi
 # Aliases
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 
+# Agents
 if [[ -f "${HOME}/.agents" ]]; then
     source $HOME/.agents
+fi
+
+# Ansible
+if [[ -f "${HOME}/ansible_hosts" ]]; then
+    export ANSIBLE_HOSTS=$HOME/ansible_hosts
 fi
 
 # Colored man pages

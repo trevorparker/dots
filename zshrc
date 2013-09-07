@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="trvr"
 DISABLE_AUTO_UPDATE="true"
-plugins=(git)
+plugins=(git jump)
 source $ZSH/oh-my-zsh.sh
 
 # Set PATH
@@ -23,8 +23,14 @@ alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 # ZSH opts
 setopt interactivecomments
 
+# Agents
 if [[ -f "${HOME}/.agents" ]]; then
     source $HOME/.agents
+fi
+
+# Ansible
+if [[ -f "${HOME}/ansible_hosts" ]]; then
+    export ANSIBLE_HOSTS=$HOME/ansible_hosts
 fi
 
 # Colored man pages
