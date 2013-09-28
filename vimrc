@@ -3,6 +3,7 @@
 """""""""""""
 
 set nocompatible
+set bs=2
 
 set ai
 set autoindent
