@@ -19,6 +19,7 @@ fi
 
 # Aliases
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
+alias vi='vim'
 
 # ZSH opts
 setopt interactivecomments
