@@ -7,7 +7,7 @@ time="%(?.%{$fg[cyan]%}.%{$fg[yellow]%})%*%{$reset_color%}"
 # Colors: (G)reen, (C)yan, (G)reen, (x)reset
 # GGGGGGGGCCCCCCCCCxxxxx GGGGGGGxYxGx
 # username@hostname:path gitness ! #
-if [[ $USER == "root" ]]; then
+if [[ $USER == "root" || $(id -u -n) == "root" ]]; then
     PROMPT='${time} %{$fg[red]%}%n%{$fg[cyan]%}@%m%{$reset_color%}:%c $(git_prompt_info) %{$fg[green]%}# %{$reset_color%}'
 else
     PROMPT='${time} %{$fg[green]%}%n%{$fg[cyan]%}@%m%{$reset_color%}:%c $(git_prompt_info) %{$fg[green]%}# %{$reset_color%}'
