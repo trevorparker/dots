@@ -6,7 +6,7 @@ plugins=(git jump)
 source $ZSH/oh-my-zsh.sh
 
 # Set PATH
-PATH=/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$HOME/.rvm/bin:$PATH
+PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
 
 # Exports
 export TZ=America/New_York
@@ -51,3 +51,6 @@ man() {
 if [[ -f "${HOME}/.travis/travis.sh" ]]; then
     source $HOME/.travis/travis.sh
 fi
+
+eval "$(rbenv init -)"
+
