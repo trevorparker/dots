@@ -52,5 +52,7 @@ if [[ -f "${HOME}/.travis/travis.sh" ]]; then
     source $HOME/.travis/travis.sh
 fi
 
-eval "$(rbenv init -)"
+if [[ $(command -v rbenv) >/dev/null ]]; then
+    eval "$(rbenv init -)"
+fi
 
