@@ -26,8 +26,6 @@ set wrap
 set ttymouse=xterm2
 set mouse=n
 
-set term=cons25
-
 syntax enable
 
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2

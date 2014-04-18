@@ -12,8 +12,11 @@ PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
 export TZ=America/New_York
 export LANG=en_US.UTF-8
 
-if [[ -e "$HOME/go" && -e "$HOME/goworkspace" ]]; then
+if [[ -e "$HOME/go" ]]; then
     export GOROOT=$HOME/go
+fi
+
+if [[ -e "$HOME/goworkspace" ]]; then
     export GOPATH=$HOME/goworkspace
 fi
 
