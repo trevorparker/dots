@@ -1,32 +1,42 @@
-"""""""""""""
 " .vimrc
-"""""""""""""
 
-set nocompatible
-set bs=2
-
-set autoindent
+" basic things
+set nocompatible                " make vim useful
 set autoread
-set background=dark
-set clipboard+=unnamed
-set cursorline
-set expandtab
+set backspace=2                 " indent,eol,start
+set encoding=utf-8
 set history=300
-set hlsearch
-set incsearch
-set laststatus=2
-set number
-set pastetoggle=<F2>
+
+" indentation
+set autoindent
 set shiftwidth=4
-set softtabstop=4
 set smartindent
+
+" tabs
+set expandtab
+set softtabstop=4
 set tabstop=4
+
+" display
+set background=dark
+set cursorline
+set number
+set laststatus=2
 set wrap
 
+" search
+set hlsearch
+set incsearch
+
+" mouse
 set ttymouse=xterm2
 set mouse=n
 
 syntax enable
 
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+filetype plugin indent on       " infer from ~/.vim/ftplugin/
+
+" highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
