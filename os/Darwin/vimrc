@@ -39,4 +39,7 @@ filetype plugin indent on       " infer from ~/.vim/ftplugin/
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+autocmd VimEnter,WinEnter * match ExtraWhitespace /\s\+$/
+
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
