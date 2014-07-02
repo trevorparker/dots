@@ -30,7 +30,7 @@ set incsearch
 
 " mouse
 set ttymouse=xterm2
-set mouse=n
+set mouse=a
 
 set dir=$HOME/.vim/swap//,~/tmp//,/var/tmp//,/tmp//,.
 
