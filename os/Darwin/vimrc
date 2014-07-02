@@ -32,6 +32,8 @@ set incsearch
 set ttymouse=xterm2
 set mouse=n
 
+set dir=$HOME/.vim/swap//,~/tmp//,/var/tmp//,/tmp//,.
+
 syntax enable
 
 filetype plugin indent on       " infer from ~/.vim/ftplugin/
