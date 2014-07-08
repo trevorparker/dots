@@ -39,3 +39,8 @@ away.log
 id_rsa
 id_dsa
 .ssh/trevorparker*
+
+# Allow Scala SQL Evolutions #
+##############################
+!*/evolutions/**/*.sql
+
