@@ -1,4 +1,6 @@
 # ZSH things
+export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="trvr"
 DISABLE_AUTO_UPDATE="true"
