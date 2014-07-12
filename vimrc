@@ -1,5 +1,8 @@
 " .vimrc
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 " basic things
 set nocompatible                " make vim useful
 set autoread
