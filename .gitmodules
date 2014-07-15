@@ -10,3 +10,6 @@
 [submodule "vim/bundle/detectindent"]
 	path = vim/bundle/detectindent
 	url = http://github.com/ciaranm/detectindent
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
