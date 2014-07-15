@@ -48,3 +48,5 @@ autocmd VimEnter,WinEnter * match ExtraWhitespace /\s\+$/
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
+autocmd BufReadPost * :DetectIndent
+
