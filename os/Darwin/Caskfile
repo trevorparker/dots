@@ -4,9 +4,6 @@
 # Install cask
 install caskroom/cask/brew-cask
 
-# Unlock goodies like iterm2-beta
-tap caskroom/versions
-
 # System utilities
 cask install caffeine
 cask install little-snitch
@@ -14,7 +11,7 @@ cask install onepassword
 
 # Productivity
 cask install dropbox
-cask install iterm2-beta
+cask install iterm2
 
 # Communication!
 cask install chromium
