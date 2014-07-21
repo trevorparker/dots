@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vim-swift"]
+	path = vim/bundle/vim-swift
+	url = git://github.com/toyamarinyon/vim-swift.git
