@@ -38,6 +38,7 @@ set mouse=a
 set dir=$HOME/.vim/swap//,~/tmp//,/var/tmp//,/tmp//,.
 
 let g:go_disable_autoinstall = 1
+let g:go_fmt_command = "gofmt"
 
 syntax enable
 
