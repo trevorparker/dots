@@ -37,6 +37,8 @@ set mouse=a
 
 set dir=$HOME/.vim/swap//,~/tmp//,/var/tmp//,/tmp//,.
 
+let g:go_disable_autoinstall = 1
+
 syntax enable
 
 filetype plugin indent on       " infer from ~/.vim/ftplugin/
