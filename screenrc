@@ -7,5 +7,5 @@ bind ^h
 bind h
 
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n* %f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %{W}%c:%s %{g}]'
+hardstatus string "%{= kw}| %{= kg}%H%{-} |%= %-Lw%{= W}%n*%f %t%{-}%+Lw %=| %{= g}%c:%s%{-} |"
 
