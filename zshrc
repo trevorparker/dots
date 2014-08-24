@@ -8,7 +8,7 @@ plugins=(git jump)
 source $ZSH/oh-my-zsh.sh
 
 # Set PATH
-PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
+PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
 
 # Exports
 export TZ=America/New_York
