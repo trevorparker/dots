@@ -11,6 +11,16 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 ME=`basename $0`
 UNAME="$(uname)"
+HOSTNAME="$(hostname)"
+
+for f in `ls -1 $DIR/`; do
+    if [[ -e "$DIR/$f" && "$f" != "$ME" && "$f" != "os" && "$F" != "host" && "$f" != "README.md" ]]; then
+        echo "Linking ~/.$f -> $DIR/$f"
+        ln -sfn $DIR/$f ~/.$f
+    fi
+done
+
+# OS-specific configs
 if [[ -d "$DIR/os/$UNAME" ]]; then
     for f in `ls -1 $DIR/os/$UNAME/`; do
         if [[ -e "$DIR/os/$UNAME/$f" && "$f" != "$ME" && "$f" != "README.md" ]]; then
@@ -20,9 +30,13 @@ if [[ -d "$DIR/os/$UNAME" ]]; then
     done
 fi
 
-for f in `ls -1 $DIR/`; do
-    if [[ -e "$DIR/$f" && "$f" != "$ME" && "$f" != "os" && "$f" != "README.md" ]]; then
-        echo "Linking ~/.$f -> $DIR/$f"
-        ln -sfn $DIR/$f ~/.$f
-    fi
-done
+# Host-specific configs
+if [[ -d "$DIR/host/$HOSTNAME" ]]; then
+    for f in `ls -1 $DIR/host/$HOSTNAME/`; do
+        if [[ -e "$DIR/host/$HOSTNAME/$f" && "$f" != "$ME" && "$f" != "README.md" ]]; then
+            echo "Linking ~/.$f -> $DIR/host/$HOSTNAME/$f"
+            ln -sfn $DIR/host/$HOSTNAME/$f ~/.$f
+        fi
+    done
+fi
+
