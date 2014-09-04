@@ -1,5 +1,9 @@
-# GPG and SSH agents
-eval $(keychain --eval --quiet id_rsa 2D2689C3)
+#!/bin/bash
+
+if [[ $(command -v keychain) >/dev/null ]]; then
+  eval $(keychain --eval --quiet --agents gpg 2D2689C3)
+fi
 
 GPG_TTY=$(tty)
 export GPG_TTY
+

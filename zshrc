@@ -30,7 +30,7 @@ alias vi='vim'
 setopt interactivecomments
 
 # Agents
-if [[ -f "${HOME}/.agents" && $(command -v keychain) >/dev/null ]]; then
+if [[ -f "${HOME}/.agents" ]]; then
     source $HOME/.agents
 fi
 
