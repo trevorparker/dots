@@ -13,30 +13,32 @@ ME=`basename $0`
 UNAME="$(uname)"
 HOSTNAME="$(hostname)"
 
-for f in `ls -1 $DIR/`; do
-    if [[ -e "$DIR/$f" && "$f" != "$ME" && "$f" != "os" && "$F" != "host" && "$f" != "README.md" ]]; then
-        echo "Linking ~/.$f -> $DIR/$f"
-        ln -sfn $DIR/$f ~/.$f
+function bootstrap_dir {
+    local dir=$1
+    local filter_string=$2
+
+    local filter=$(ls -1 ${dir})
+
+    if [[ -n $filter_string ]]; then
+        filter=$(ls -1 ${dir} | /usr/bin/grep -vE ${filter_string})
     fi
-done
+    for f in $filter; do
+        if [[ "$f" != "$ME" && "$f" != "README.md" ]]; then
+            echo "Linking ~/.$f -> $dir/$f"
+            ln -sfn $dir/$f ~/.$f
+        fi
+    done
+}
+
+bootstrap_dir $DIR ^h?ost?$
 
 # OS-specific configs
 if [[ -d "$DIR/os/$UNAME" ]]; then
-    for f in `ls -1 $DIR/os/$UNAME/`; do
-        if [[ -e "$DIR/os/$UNAME/$f" && "$f" != "$ME" && "$f" != "README.md" ]]; then
-            echo "Linking ~/.$f -> $DIR/os/$UNAME/$f"
-            ln -sfn $DIR/os/$UNAME/$f ~/.$f
-        fi
-    done
+    bootstrap_dir $DIR/os/$UNAME
 fi
 
 # Host-specific configs
 if [[ -d "$DIR/host/$HOSTNAME" ]]; then
-    for f in `ls -1 $DIR/host/$HOSTNAME/`; do
-        if [[ -e "$DIR/host/$HOSTNAME/$f" && "$f" != "$ME" && "$f" != "README.md" ]]; then
-            echo "Linking ~/.$f -> $DIR/host/$HOSTNAME/$f"
-            ln -sfn $DIR/host/$HOSTNAME/$f ~/.$f
-        fi
-    done
+    bootstrap_dir $DIR/host/$HOSTNAME
 fi
 
