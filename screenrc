@@ -9,3 +9,5 @@ bind h
 hardstatus alwayslastline
 hardstatus string "%{= kw}| %{= kg}%H%{-} |%= %-Lw%{= W}%n*%f %t%{-}%+Lw %=| %{= g}%c:%s%{-} |"
 
+term screen-256color
+
