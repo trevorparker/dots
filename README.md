@@ -6,6 +6,21 @@ My public dotfiles, and a script to bootstrap them.
 bootstrap.sh
 ------------
 
-A pretty simple script that takes everything here (aside from itself) and symlinks to appropriate dot files in your home directory.
+The `bootstrap.sh` script links everything in the dots repository to corresponding files or directories in your `$HOME`, as-is, with a dot prepended. The following special files/directories are not considered:
 
-It does special handling of the `os/` directory depending on your system. Simply, if `uname` matches a directory within `os/`, then files in that directory are symlinked. Otherwise they're ignored. This is powerful for having some files on some machines, but not others, in cases where those files can't be intelligently scripted on their own.
+* `bootstrap.sh`
+* `README.md`
+* `os/`
+* `host/`
+
+os and host directories
+-----------------------
+
+The `os/` and `host/` directories are not directly symlinked. Instead, they are inspected for subdirectories that match `uname` and `hostname`. If a match is found, files and directories in that subdirectory are symlinked into your `$HOME`. The order of precedence for conflicting files or directores are as follows, from most to least specific:
+
+1. Files and directories within `host/`
+1. Files and directories within `os/`
+1. Files and directories at the root of the repository
+
+For a given host `example`, running OS `Darwin`, the file `host/example/gitconfig` will win out over `os/darwin/gitconfig` and `gitconfig`.
+
