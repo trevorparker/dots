@@ -14,16 +14,27 @@ tap trevorparker/casks
 cask install caffeine
 cask install little-snitch-nightly
 cask install onepassword-beta
+cask install virtualbox
 
 # Productivity
 cask install dropbox
 cask install iterm2-nightly
+cask install scrivener
 
 # Communication!
 cask install chromium
 cask install skype
 
+# Games
+cask install openttd
+cask install sauerbraten
+cask install steam
+
 # Entertainment
 cask install rdio
 cask install vlc
+
+# Reading
+cask install calibre
+cask install kindle
 

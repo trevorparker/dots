@@ -1,12 +1,16 @@
 # Run `brew bundle .Brewfile`
 
+install duplicity
 install git
 install gnupg
+install go
 install gpg-agent
 install keychain
 install mobile-shell
+install node
 install rbenv
 install ruby-build
+install scala
 install vim
 install zsh
 
