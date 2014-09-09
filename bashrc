@@ -1,17 +1,21 @@
 # Set PATH
-PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
+PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
 
 # Exports
 export TZ=America/New_York
 export LANG=en_US.UTF-8
 
-if [[ -e "$HOME/go" && -e "$HOME/goworkspace" ]]; then
+if [[ -e "$HOME/go" ]]; then
     export GOROOT=$HOME/go
+fi
+
+if [[ -e "$HOME/goworkspace" ]]; then
     export GOPATH=$HOME/goworkspace
 fi
 
 # Aliases
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
+alias vi='vim'
 
 # Agents
 if [[ -f "${HOME}/.agents" ]]; then
