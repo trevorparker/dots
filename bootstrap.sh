@@ -20,8 +20,8 @@ function bootstrap_dir {
     fi
     for f in $filter; do
         if [ "${f}" != "${script_name}" -a "${f}" != "README.md" ]; then
-            echo "Linking ~/.${f} -> ${dir}/${f}"
-            ln -sfn ${dir}/${f} ~/.${f}
+            echo "Linking ${HOME}/.${f} -> ${dir}/${f}"
+            ln -sfn ${dir}/${f} ${HOME}/.${f}
         fi
     done
 }
