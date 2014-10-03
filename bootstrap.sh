@@ -1,44 +1,40 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
-SOURCE="${BASH_SOURCE[0]}"
-while [[ -h "$SOURCE" ]]; do
-    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-    SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+set -e
 
-ME=`basename $0`
-UNAME="$(uname)"
-HOSTNAME="$(hostname)"
+script_name=$(basename "${0}")
+location="$(cd "$(dirname "${0}")" && pwd)"
+
+script_name="$(basename "${0}")"
+os="$(uname)"
+hostname="$(hostname)"
 
 function bootstrap_dir {
-    local dir=$1
-    local filter_string=$2
+    local dir="${1}"
+    local filter_string="${2}"
 
-    local filter=$(ls -1 ${dir})
+    local filter="$(ls -1 "${dir}")"
 
-    if [[ -n $filter_string ]]; then
-        filter=$(ls -1 ${dir} | /usr/bin/grep -vE ${filter_string})
+    if [ -n "${filter_string}" ]; then
+        filter="$(ls -1 "${dir}" | grep -vE "${filter_string}")"
     fi
     for f in $filter; do
-        if [[ "$f" != "$ME" && "$f" != "README.md" ]]; then
-            echo "Linking ~/.$f -> $dir/$f"
-            ln -sfn $dir/$f ~/.$f
+        if [ "${f}" != "${script_name}" -a "${f}" != "README.md" ]; then
+            echo "Linking ~/.${f} -> ${dir}/${f}"
+            ln -sfn ${dir}/${f} ~/.${f}
         fi
     done
 }
 
-bootstrap_dir $DIR ^h?ost?$
+bootstrap_dir "${location}" '^h?ost?$'
 
 # OS-specific configs
-if [[ -d "$DIR/os/$UNAME" ]]; then
-    bootstrap_dir $DIR/os/$UNAME
+if [ -d "${location}/os/${os}" ]; then
+    bootstrap_dir "${location}/os/${os}"
 fi
 
 # Host-specific configs
-if [[ -d "$DIR/host/$HOSTNAME" ]]; then
-    bootstrap_dir $DIR/host/$HOSTNAME
+if [ -d "${location}/host/${hostname}" ]; then
+    bootstrap_dir "${location}/host/${hostname}"
 fi
 
