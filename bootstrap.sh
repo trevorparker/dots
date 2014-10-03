@@ -9,7 +9,7 @@ script_name="$(basename "${0}")"
 os="$(uname)"
 hostname="$(hostname)"
 
-function bootstrap_dir {
+bootstrap_dir () {
     local dir="${1}"
     local filter_string="${2}"
 
