@@ -4,6 +4,7 @@ PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PAT
 # Exports
 export TZ=America/New_York
 export LANG=en_US.UTF-8
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 if [[ -e "$HOME/go" ]]; then
     export GOROOT=$HOME/go
@@ -16,11 +17,6 @@ fi
 # Aliases
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 alias vi='vim'
-
-# Agents
-if [[ -f "${HOME}/.agents" ]]; then
-    source $HOME/.agents
-fi
 
 # Ansible
 if [[ -f "${HOME}/ansible_hosts" ]]; then
