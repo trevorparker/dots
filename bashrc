@@ -4,6 +4,7 @@ PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PAT
 # Exports
 export TZ=America/New_York
 export LANG=en_US.UTF-8
+export EDITOR="vim"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 if [[ -e "$HOME/go" ]]; then
