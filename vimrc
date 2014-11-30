@@ -36,6 +36,7 @@ set ttymouse=xterm2
 set mouse=a
 
 set dir=$HOME/.vim/swap//,~/tmp//,/var/tmp//,/tmp//,.
+set backupdir=$HOME/.vim/backup//,~/tmp//,/var/tmp//,/tmp//,.
 
 let g:detectindent_preferred_expandtab = 1
 let g:go_disable_autoinstall = 1
