@@ -6,6 +6,8 @@ bind \\
 bind ^h
 bind h
 
+vbell off
+
 hardstatus alwayslastline
 hardstatus string "%{= kw}| %{= kg}%H%{-} |%= %-Lw%{= W}%n*%f %t%{-}%+Lw %=| %{= g}%c:%s%{-} |"
 
