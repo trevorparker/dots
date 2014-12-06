@@ -4,6 +4,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 " basic things
+set shortmess+=I                " disable startup screen
 set nocompatible                " make vim useful
 set autoread
 set backspace=2                 " indent,eol,start
