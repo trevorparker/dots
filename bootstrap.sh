@@ -22,7 +22,7 @@ bootstrap_dir () {
     local filter="$(ls -${ls_opts} "${dir}")"
 
     if [ -n "${filter_string}" ]; then
-        filter="$(ls -1 "${dir}" | grep -vE "${filter_string}")"
+        filter="$(ls -${ls_opts} "${dir}" | grep -vE "${filter_string}")"
     fi
     for f in $filter; do
         if [ "${f}" != "${script_name}" -a "${f}" != "README.md" ]; then
