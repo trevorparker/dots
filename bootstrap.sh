@@ -15,7 +15,7 @@ bootstrap_dir () {
     local dir="${1}"
     local filter_string="${2}"
 
-    if [ "${os}" = "FreeBSD" ]; then
+    if [ "${os}" = "FreeBSD" -a $EUID -eq 0 ]; then
         ls_opts="${ls_opts}I"
     fi
 
