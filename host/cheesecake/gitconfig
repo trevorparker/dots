@@ -1,9 +1,0 @@
-[user]
-	name = Trevor Parker
-	email = tparker@linode.com
-[core]
-	excludesfile = /Users/tparker/.gitignore_global
-[color]
-	diff = true
-[alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
