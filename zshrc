@@ -8,7 +8,7 @@ plugins=(git jump)
 source $ZSH/oh-my-zsh.sh
 
 # Set PATH
-PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
+PATH=$HOME/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
 
 # Exports
 export TZ=America/New_York
@@ -56,5 +56,14 @@ fi
 
 if [[ $(command -v rbenv) >/dev/null ]]; then
     eval "$(rbenv init -)"
+fi
+
+if [[ $(command -v pyenv) >/dev/null ]]; then
+    eval "$(pyenv init -)"
+    export PYENV_ROOT=/usr/local/opt/pyenv
+fi
+
+if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 

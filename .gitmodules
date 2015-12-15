@@ -13,9 +13,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/vim-swift"]
-	path = vim/bundle/vim-swift
-	url = git://github.com/toyamarinyon/vim-swift.git
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
@@ -25,3 +22,6 @@
 [submodule "vim/bundle/vim-groovy"]
 	path = vim/bundle/vim-groovy
 	url = https://github.com/vim-scripts/groovy.vim.git
+[submodule "vim/bundle/swift.vim"]
+	path = vim/bundle/swift.vim
+	url = https://github.com/keith/swift.vim.git

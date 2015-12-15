@@ -15,7 +15,7 @@ bootstrap_dir () {
     local dir="${1}"
     local filter_string="${2}"
 
-    if [ "${os}" = "FreeBSD" -a $EUID -eq 0 ]; then
+    if ([ "${os}" = "FreeBSD" ] && [ $EUID -eq 0 ]); then
         ls_opts="${ls_opts}I"
     fi
 
@@ -25,7 +25,7 @@ bootstrap_dir () {
         filter="$(ls -${ls_opts} "${dir}" | grep -vE "${filter_string}")"
     fi
     for f in $filter; do
-        if [ "${f}" != "${script_name}" -a "${f}" != "README.md" ]; then
+        if ([ "${f}" != "${script_name}" ] && [ "${f}" != "README.md" ]); then
             echo "Linking ${HOME}/.${f} -> ${dir}/${f}"
             ln -sfn ${dir}/${f} ${HOME}/.${f}
         fi
