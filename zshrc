@@ -8,13 +8,23 @@ plugins=(git jump)
 source $ZSH/oh-my-zsh.sh
 
 # Set PATH
+if [[ -e "/usr/local/texline/2015basic/bin/universal-darwin" ]]; then
+    PATH=/usr/local/texlive/2015basic/bin/universal-darwin:$PATH
+fi
+
 PATH=$HOME/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
+PATH=$HOME/.local/bin/:$PATH
 
 # Exports
 export TZ=America/New_York
 export LANG=en_US.UTF-8
 export EDITOR="vim"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+# Ansible
+if [[ -f "${HOME}/ansible_hosts" ]]; then
+    export ANSIBLE_HOSTS=$HOME/ansible_hosts
+fi
 
 if [[ -e "$HOME/go" ]]; then
     export GOROOT=$HOME/go
@@ -30,11 +40,6 @@ alias vi='vim'
 
 # ZSH opts
 setopt interactivecomments
-
-# Ansible
-if [[ -f "${HOME}/ansible_hosts" ]]; then
-    export ANSIBLE_HOSTS=$HOME/ansible_hosts
-fi
 
 # Colored man pages
 # https://wiki.archlinux.org/index.php/Man_Page#Using_less_.28Recommended.29
@@ -52,6 +57,10 @@ man() {
 # added by travis gem
 if [[ -f "${HOME}/.travis/travis.sh" ]]; then
     source $HOME/.travis/travis.sh
+fi
+
+if [[ -f "${HOME}/.zsh_tokens" ]]; then
+    source $HOME/.zsh_tokens
 fi
 
 if [[ $(command -v rbenv) >/dev/null ]]; then

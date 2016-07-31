@@ -18,12 +18,13 @@ set smartindent
 
 " tabs
 set expandtab
-set softtabstop=4
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " display
 set background=dark
-set cursorline
 set number
 set laststatus=2
 set wrap
@@ -40,9 +41,15 @@ set dir=$HOME/.vim/swap//,~/tmp//,/var/tmp//,/tmp//,.
 set backupdir=$HOME/.vim/backup//,~/tmp//,/var/tmp//,/tmp//,.
 set undodir=$HOME/.vim/undo//,~/tmp//,/var/tmp//,/tmp//,.
 
+if exists('+fixeol')
+  set nofixeol
+endif
+
 let g:detectindent_preferred_expandtab = 1
 let g:go_disable_autoinstall = 1
 let g:go_fmt_command = "gofmt"
+
+let g:ledger_align_at=80
 
 syntax enable
 
