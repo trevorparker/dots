@@ -12,8 +12,17 @@ if [[ -e "/usr/local/texline/2015basic/bin/universal-darwin" ]]; then
     PATH=/usr/local/texlive/2015basic/bin/universal-darwin:$PATH
 fi
 
-PATH=$HOME/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$HOME/go/bin:$PATH
+if [[ -e "$HOME/go" ]]; then
+    export GOROOT=$HOME/go
+fi
+
+if [[ -e "$HOME/goworkspace" ]]; then
+    export GOPATH=$HOME/goworkspace
+fi
+
+PATH=$HOME/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$PATH
 PATH=$HOME/.local/bin/:$PATH
+PATH=$PATH:$HOME/.cargo/bin/
 
 # Exports
 export TZ=America/New_York
@@ -26,17 +35,10 @@ if [[ -f "${HOME}/ansible_hosts" ]]; then
     export ANSIBLE_HOSTS=$HOME/ansible_hosts
 fi
 
-if [[ -e "$HOME/go" ]]; then
-    export GOROOT=$HOME/go
-fi
-
-if [[ -e "$HOME/goworkspace" ]]; then
-    export GOPATH=$HOME/goworkspace
-fi
-
 # Aliases
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 alias vi='vim'
+unalias gm
 
 # ZSH opts
 setopt interactivecomments

@@ -44,7 +44,6 @@ if exists('+fixeol')
   set nofixeol
 endif
 
-let g:detectindent_preferred_expandtab = 1
 let g:go_disable_autoinstall = 1
 let g:go_fmt_command = "gofmt"
 
@@ -60,6 +59,4 @@ match ExtraWhitespace /\s\+$/
 autocmd VimEnter,WinEnter * match ExtraWhitespace /\s\+$/
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-autocmd BufReadPost * :DetectIndent
 
