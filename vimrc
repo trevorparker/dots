@@ -37,6 +37,7 @@ set ttymouse=xterm2
 set mouse=a
 
 " statusline
+" source: https://stackoverflow.com/a/10416234
 hi User1 guifg=#ffdad8  guibg=#880c0e
 hi User2 guifg=#000000  guibg=#F4905C
 hi User3 guifg=#292b00  guibg=#f4f597
