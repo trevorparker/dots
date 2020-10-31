@@ -20,15 +20,18 @@ if [[ -e "$HOME/goworkspace" ]]; then
     export GOPATH=$HOME/goworkspace
 fi
 
-PATH=$HOME/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$PATH
+PATH=$HOME/bin:$HOME/bin/homebrew/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$PATH
 PATH=$HOME/.local/bin/:$PATH
 PATH=$PATH:$HOME/.cargo/bin/
+PATH=$PATH:$HOME/goworkspace/bin
+PATH=$PATH:/opt/miniconda3/bin
 
 # Exports
 export TZ=America/New_York
 export LANG=en_US.UTF-8
 export EDITOR="vim"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export LIBRARY_PATH="$LIBRARY_PATH:$HOME/bin/homebrew/lib/"
 
 # Ansible
 if [[ -f "${HOME}/ansible_hosts" ]]; then
@@ -38,6 +41,8 @@ fi
 # Aliases
 alias timestamp="date -u +'%Y-%m-%dT%H:%M:%S+00:00'"
 alias vi='vim'
+alias python=$HOME/bin/homebrew/bin/python3
+alias pip=$HOME/bin/homebrew/bin/pip3
 unalias gm
 
 # ZSH opts
@@ -78,3 +83,6 @@ if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

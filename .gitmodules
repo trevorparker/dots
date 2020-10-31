@@ -31,3 +31,9 @@
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/bundle/kotlin-vim"]
+	path = vim/bundle/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim
+[submodule "vim/bundle/vim-raku"]
+	path = vim/bundle/vim-raku
+	url = https://github.com/Raku/vim-raku.git
