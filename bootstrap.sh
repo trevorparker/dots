@@ -48,11 +48,16 @@ bootstrap_config_dir () {
     for f in $filter; do
         if [ -d "${dotsdir}/${f}" ]; then
             if [ -d "${configdir}/${f}" ]; then
+                if [ -L "${configdir}/${f}" ]; then
+                    echo "  Linking directory ${configdir}/${f} -> ${dotsdir}/${f}"
+                    ln -${ln_opts} ${dotsdir}/${f} ${configdir}/${f} || continue
+                else
+                    echo "  Looking in ${configdir}/${f} ..."
+                    bootstrap_config_dir "${dotsdir}/${f}" "${configdir}/${f}"
+                fi
+            else
                 echo "  Looking in ${configdir}/${f} ..."
                 bootstrap_config_dir "${dotsdir}/${f}" "${configdir}/${f}"
-            else
-                echo "  Linking directory ${configdir}/${f} -> ${dotsdir}/${f}"
-                ln -${ln_opts} ${dotsdir}/${f} ${configdir}/${f} || continue
             fi
         else
             if [ -f "${configdir}/${f}" ]; then
