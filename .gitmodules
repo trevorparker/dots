@@ -16,3 +16,6 @@
 [submodule "vim/bundle/nim.vim"]
 	path = vim/bundle/nim.vim
 	url = https://github.com/zah/nim.vim/
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
