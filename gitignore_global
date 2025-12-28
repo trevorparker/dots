@@ -45,3 +45,4 @@ id_dsa
 !*/evolutions/**/*.sql
 
 .vscode/
+.idea/

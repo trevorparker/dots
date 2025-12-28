@@ -1,0 +1,18 @@
+source ${HOME}/.dots/zshrc
+
+PATH=$HOME/bin:/opt/homebrew/sbin:/opt/homebrew/bin:$HOME/.rbenv/bin:$HOME/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:$PATH
+PATH=$HOME/.local/bin/:$PATH
+PATH=$PATH:$HOME/.cargo/bin/
+PATH=$PATH:$HOME/goworkspace/bin
+PATH=$PATH:/opt/miniconda3/bin
+PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:$HOME/bin/zig
+PATH=$PATH:$HOME/.docker/bin
+PATH=$PATH:/opt/homebrew/anaconda3/bin
+PATH=$PATH:/Applications/86Box.app/Contents/MacOS/
+
+export LEDGER_FILE=~/finance/current.journal
+
+if [[ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]]; then
+    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+fi
